@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+.DS_Store
+demo_frames/
+temp_frames/
+node_modules/
