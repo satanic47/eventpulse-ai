@@ -284,6 +284,43 @@
 
     <!-- TAB 4: Vendor & Invites Suite -->
     <div id="tab-vendors" class="tab-content">
+      <!-- Interactive Vendor Checklist -->
+      <div class="panel" style="margin-bottom: 1.5rem;">
+        <div class="panel-header">
+          <h2 class="panel-title">📋 Vendor Checklist & Milestone Tracker</h2>
+          <span class="preset-badge" id="checklist-progress-badge">0 / 6 Completed</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Keep vendors aligned across key milestones to ensure flawless day-of operations:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.75rem;" id="vendor-checklist-container">
+          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" checked />
+            <span>🏛️ Venue Contract & 50% Deposit Secured</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" checked />
+            <span>🍽️ Tasting & Dietary Split (~35% Veg/Vegan)</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" />
+            <span>🎧 AV / DJ Sound Check & Mic Test</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" />
+            <span>🍷 Beverage Delivery & Bartender Scheduling</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" />
+            <span>📸 Photography & Key Moment Shot List</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" />
+            <span>☔ Rain & Weather Contingency Confirmed</span>
+          </label>
+        </div>
+      </div>
+
       <div class="dashboard-grid">
         <div class="panel">
           <div class="panel-header">

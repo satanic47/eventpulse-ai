@@ -313,8 +313,22 @@ function generateAssistantReply(query) {
   return `<strong>✨ EventPulse Recommendation:</strong> Based on your <em>${eventState.title}</em> for ${guests} guests, your current pacing and resource allocation are well balanced. Would you like me to adjust the timeline, optimize vendor allocations, or draft an announcement?`;
 }
 
+// Checklist Progress Counter
+function updateChecklistProgress() {
+  const checkboxes = document.querySelectorAll("#vendor-checklist-container input[type='checkbox']");
+  if (!checkboxes.length) return;
+  const total = checkboxes.length;
+  const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+  const badge = document.getElementById("checklist-progress-badge");
+  if (badge) {
+    badge.innerText = `${checked} / ${total} Completed`;
+    badge.style.color = checked === total ? "var(--emerald)" : "var(--gold)";
+  }
+}
+
 // Initial Setup
 document.addEventListener("DOMContentLoaded", () => {
+  updateChecklistProgress();
   // Preset click handlers
   document.querySelectorAll(".preset-card").forEach(card => {
     card.addEventListener("click", () => {
