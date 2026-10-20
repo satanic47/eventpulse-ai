@@ -1,6 +1,5 @@
 # 🎉 EventPulse AI — Autonomous Celebration & Event Planner Copilot
 
-[![CI / Test Suite](https://github.com/satanic47/eventpulse-ai/actions/workflows/test.yml/badge.svg)](https://github.com/satanic47/eventpulse-ai/actions/workflows/test.yml)
 [![Tests: 12 Passing](https://img.shields.io/badge/Tests-12%2F12%20Passing-06D6A0?style=for-the-badge&logo=pytest)](tests/)
 [![Security: Hardened](https://img.shields.io/badge/Security-Sanitized%20&%20Hardened-8338EC?style=for-the-badge&logo=shield)](SECURITY.md)
 [![Accessibility: WCAG 2.1 AA](https://img.shields.io/badge/Accessibility-WCAG%202.1%20AA-FFB703?style=for-the-badge&logo=w3c)](index.html)
