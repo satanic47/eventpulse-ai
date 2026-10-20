@@ -3,372 +3,381 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="EventPulse AI - Autonomous Celebration and Event Planner Copilot for Weddings, Birthdays, and Community Hackathons." />
   <title>EventPulse AI — Autonomous Celebration & Event Planner Copilot</title>
   <link rel="stylesheet" href="static/css/style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20%220%22%20%22100%22%20%22100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>">
 </head>
 <body>
+  <!-- WCAG 2.1 AA Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <div class="container">
     <!-- Header -->
-    <header>
+    <header role="banner">
       <div class="brand">
-        <div class="logo-badge">🎉</div>
+        <div class="logo-badge" aria-hidden="true">🎉</div>
         <div>
           <h1 class="brand-title">EventPulse AI</h1>
           <p class="brand-tagline">Autonomous Celebration & Event Planner Copilot • Hack2skill Challenge 5</p>
         </div>
       </div>
-      <div class="telemetry-bar">
+      <div class="telemetry-bar" aria-label="Event Live Metrics" role="region">
         <div class="stat-pill">
-          <div class="stat-val" id="header-budget-stat">$12,000</div>
+          <div class="stat-val" id="header-budget-stat" aria-live="polite">$12,000</div>
           <div class="stat-lbl">Total Budget</div>
         </div>
         <div class="stat-pill">
-          <div class="stat-val" id="header-guests-stat">150</div>
+          <div class="stat-val" id="header-guests-stat" aria-live="polite">150</div>
           <div class="stat-lbl">Guest Capacity</div>
         </div>
         <div class="stat-pill">
-          <div class="stat-val" id="header-cpg-stat">$80</div>
+          <div class="stat-val" id="header-cpg-stat" aria-live="polite">$80</div>
           <div class="stat-lbl">Cost / Guest</div>
         </div>
       </div>
     </header>
 
-    <!-- 1-Click Event Presets -->
-    <section>
-      <div class="presets-grid">
-        <div class="preset-card" data-preset="hackathon">
-          <div class="preset-header">
-            <span class="preset-icon">🏆</span>
-            <span class="preset-badge">180 Guests</span>
-          </div>
-          <h3 class="preset-title">Hackathon Gala</h3>
-          <p class="preset-desc">Awards ceremony, live synth DJ, demo stages, and late-night food trucks.</p>
-        </div>
-
-        <div class="preset-card" data-preset="wedding">
-          <div class="preset-header">
-            <span class="preset-icon">💍</span>
-            <span class="preset-badge">120 Guests</span>
-          </div>
-          <h3 class="preset-title">Sunset Wedding</h3>
-          <p class="preset-desc">Champagne welcome, acoustic quartet, 3-course dinner, and sparkler exit.</p>
-        </div>
-
-        <div class="preset-card" data-preset="launch">
-          <div class="preset-header">
-            <span class="preset-icon">🚀</span>
-            <span class="preset-badge">90 Guests</span>
-          </div>
-          <h3 class="preset-title">Product Launch</h3>
-          <p class="preset-desc">Keynote reveal, investor VIP lounge, signature cocktails, and press wall.</p>
-        </div>
-
-        <div class="preset-card" data-preset="birthday">
-          <div class="preset-header">
-            <span class="preset-icon">🎂</span>
-            <span class="preset-badge">65 Guests</span>
-          </div>
-          <h3 class="preset-title">Retro Birthday</h3>
-          <p class="preset-desc">Speakeasy arcade, custom neon photo booth, craft cocktails, and dessert bar.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Nav Tabs -->
-    <nav class="tabs-nav">
-      <button class="tab-btn active" data-tab="tab-overview" onclick="switchTab('tab-overview')">⚡ Planner Engine</button>
-      <button class="tab-btn" data-tab="tab-budget" onclick="switchTab('tab-budget')">📊 Smart Budget & Drinks</button>
-      <button class="tab-btn" data-tab="tab-timeline" onclick="switchTab('tab-timeline')">⏱️ Run-of-Show Schedule</button>
-      <button class="tab-btn" data-tab="tab-vendors" onclick="switchTab('tab-vendors')">🤝 Vendor & Invites</button>
-      <button class="tab-btn" data-tab="tab-copilot" onclick="switchTab('tab-copilot')">🧠 AI Copilot Chat</button>
-    </nav>
-
-    <!-- TAB 1: Planner Engine -->
-    <div id="tab-overview" class="tab-content active">
-      <div class="dashboard-grid">
-        <!-- Configuration Form -->
-        <div class="panel">
-          <div class="panel-header">
-            <h2 class="panel-title">🎯 Event Parameters</h2>
-            <span class="preset-badge" style="background: rgba(6, 214, 160, 0.15); color: var(--emerald);">Dynamic Context Active</span>
-          </div>
-
-          <div class="form-group">
-            <label for="event-title-input">Event Name / Celebration Title</label>
-            <input type="text" id="event-title-input" value="Hackathon Afterparty & Awards Gala" />
-          </div>
-
-          <div class="form-group">
-            <label for="event-type-select">Event Category</label>
-            <select id="event-type-select">
-              <option value="hackathon">Hackathon Celebration & Demo Day</option>
-              <option value="wedding">Wedding Ceremony & Reception</option>
-              <option value="launch">Product Launch & Milestone Party</option>
-              <option value="birthday">Milestone Birthday / Social Bash</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label>Expected Guest Count</label>
-            <div class="slider-container">
-              <input type="range" id="guests-slider" min="20" max="500" step="5" value="150" />
-              <span class="slider-val" id="guests-display">150</span>
+    <!-- Main Content Region -->
+    <main id="main-content" role="main">
+      <!-- 1-Click Event Presets -->
+      <section aria-labelledby="presets-heading">
+        <h2 id="presets-heading" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Celebration Archetypes</h2>
+        <div class="presets-grid" role="region" aria-label="Pre-configured celebration templates">
+          <button class="preset-card" data-preset="hackathon" aria-label="Load National Hackathon Gala template, 180 guests" style="text-align: left; width: 100%;">
+            <div class="preset-header">
+              <span class="preset-icon" aria-hidden="true">🏆</span>
+              <span class="preset-badge">180 Guests</span>
             </div>
-          </div>
+            <h3 class="preset-title">Hackathon Gala</h3>
+            <p class="preset-desc">Awards ceremony, live synth DJ, demo stages, and late-night food trucks.</p>
+          </button>
 
-          <div class="form-group">
-            <label>Target Budget ($ USD)</label>
-            <div class="slider-container">
-              <input type="range" id="budget-slider" min="2000" max="100000" step="500" value="12000" />
-              <span class="slider-val" id="budget-display">$12,000</span>
+          <button class="preset-card" data-preset="wedding" aria-label="Load Sunset Wedding template, 120 guests" style="text-align: left; width: 100%;">
+            <div class="preset-header">
+              <span class="preset-icon" aria-hidden="true">💍</span>
+              <span class="preset-badge">120 Guests</span>
             </div>
-          </div>
+            <h3 class="preset-title">Sunset Wedding</h3>
+            <p class="preset-desc">Champagne welcome, acoustic quartet, 3-course dinner, and sparkler exit.</p>
+          </button>
 
-          <div class="form-group">
-            <label>Event Duration (Hours)</label>
-            <div class="slider-container">
-              <input type="range" id="duration-slider" min="2" max="10" step="1" value="5" />
-              <span class="slider-val" id="duration-display">5 hrs</span>
+          <button class="preset-card" data-preset="launch" aria-label="Load Product Launch template, 90 guests" style="text-align: left; width: 100%;">
+            <div class="preset-header">
+              <span class="preset-icon" aria-hidden="true">🚀</span>
+              <span class="preset-badge">90 Guests</span>
             </div>
-          </div>
+            <h3 class="preset-title">Product Launch</h3>
+            <p class="preset-desc">Keynote reveal, investor VIP lounge, signature cocktails, and press wall.</p>
+          </button>
+
+          <button class="preset-card" data-preset="birthday" aria-label="Load Retro 30th Birthday template, 65 guests" style="text-align: left; width: 100%;">
+            <div class="preset-header">
+              <span class="preset-icon" aria-hidden="true">🎂</span>
+              <span class="preset-badge">65 Guests</span>
+            </div>
+            <h3 class="preset-title">Retro Birthday</h3>
+            <p class="preset-desc">Speakeasy arcade, custom neon photo booth, craft cocktails, and dessert bar.</p>
+          </button>
         </div>
+      </section>
 
-        <!-- Live Intelligence Summary -->
-        <div>
+      <!-- Nav Tabs -->
+      <nav class="tabs-nav" role="tablist" aria-label="Event Planner Modules">
+        <button class="tab-btn active" role="tab" id="tab-btn-overview" aria-selected="true" aria-controls="tab-overview" data-tab="tab-overview" onclick="switchTab('tab-overview')">⚡ Planner Engine</button>
+        <button class="tab-btn" role="tab" id="tab-btn-budget" aria-selected="false" aria-controls="tab-budget" data-tab="tab-budget" onclick="switchTab('tab-budget')">📊 Smart Budget & Drinks</button>
+        <button class="tab-btn" role="tab" id="tab-btn-timeline" aria-selected="false" aria-controls="tab-timeline" data-tab="tab-timeline" onclick="switchTab('tab-timeline')">⏱️ Run-of-Show Schedule</button>
+        <button class="tab-btn" role="tab" id="tab-btn-vendors" aria-selected="false" aria-controls="tab-vendors" data-tab="tab-vendors" onclick="switchTab('tab-vendors')">🤝 Vendor & Invites</button>
+        <button class="tab-btn" role="tab" id="tab-btn-copilot" aria-selected="false" aria-controls="tab-copilot" data-tab="tab-copilot" onclick="switchTab('tab-copilot')">🧠 AI Copilot Chat</button>
+      </nav>
+
+      <!-- TAB 1: Planner Engine -->
+      <section id="tab-overview" class="tab-content active" role="tabpanel" aria-labelledby="tab-btn-overview" tabindex="0">
+        <div class="dashboard-grid">
+          <!-- Configuration Form -->
           <div class="panel">
             <div class="panel-header">
-              <h2 class="panel-title">🧠 Smart Pacing & Insights</h2>
+              <h2 class="panel-title">🎯 Event Parameters</h2>
+              <span class="preset-badge" style="background: rgba(6, 214, 160, 0.15); color: var(--emerald);">Dynamic Context Active</span>
             </div>
-            <div style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.85rem;">
+
+            <div class="form-group">
+              <label for="event-title-input">Event Name / Celebration Title</label>
+              <input type="text" id="event-title-input" value="Hackathon Afterparty & Awards Gala" aria-required="true" />
+            </div>
+
+            <div class="form-group">
+              <label for="event-type-select">Event Category</label>
+              <select id="event-type-select" aria-label="Celebration Category">
+                <option value="hackathon">Hackathon Celebration & Community Demo Day</option>
+                <option value="wedding">Wedding Ceremony & Reception</option>
+                <option value="launch">Product Launch & Milestone Party</option>
+                <option value="birthday">Milestone Birthday / Social Bash</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="guests-slider">Expected Guest Count</label>
+              <div class="slider-container">
+                <input type="range" id="guests-slider" min="20" max="500" step="5" value="150" aria-label="Guest count" aria-valuemin="20" aria-valuemax="500" aria-valuenow="150" />
+                <span class="slider-val" id="guests-display" aria-live="polite">150</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="budget-slider">Target Budget ($ USD)</label>
+              <div class="slider-container">
+                <input type="range" id="budget-slider" min="2000" max="100000" step="500" value="12000" aria-label="Total Budget" aria-valuemin="2000" aria-valuemax="100000" aria-valuenow="12000" />
+                <span class="slider-val" id="budget-display" aria-live="polite">$12,000</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="duration-slider">Event Duration (Hours)</label>
+              <div class="slider-container">
+                <input type="range" id="duration-slider" min="2" max="10" step="1" value="5" aria-label="Event duration in hours" aria-valuemin="2" aria-valuemax="10" aria-valuenow="5" />
+                <span class="slider-val" id="duration-display" aria-live="polite">5 hrs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Intelligence Summary -->
+          <div>
+            <div class="panel">
+              <div class="panel-header">
+                <h2 class="panel-title">🧠 Smart Pacing & Insights</h2>
+              </div>
+              <div style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.85rem;" role="region" aria-label="Calculated event specifications">
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                  <span>Venue Space Needed:</span>
+                  <strong style="color: var(--gold);">~3,000 sq.ft (Standing/Lounge)</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                  <span>Recommended Bartenders:</span>
+                  <strong style="color: var(--emerald);">2 Bartenders (1 per 75 guests)</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                  <span>Catering Service Staff:</span>
+                  <strong style="color: var(--blue);">4 Servers + 1 Event Captain</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                  <span>Sound & AV Requirement:</span>
+                  <strong style="color: var(--violet);">Dual Wireless Mics + 2kW Subwoofers</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding-top: 0.25rem;">
+                  <span>Contingency Buffer:</span>
+                  <strong style="color: var(--rose);">$600 (Reserved for overruns)</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-header">
+                <h2 class="panel-title">📋 1-Click Operations Export</h2>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Copy the synthesized event manifest, timeline, and vendor allocations directly to clipboard.
+              </p>
+              <button class="btn" style="width: 100%;" onclick="copyText('vendor-email-draft', 'copy-btn-manifest')" id="copy-btn-manifest" aria-label="Copy executive manifest to clipboard">
+                📋 Copy Executive Manifest
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: Budget Breakdown & Drinks Math -->
+      <section id="tab-budget" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-budget" tabindex="0">
+        <div class="dashboard-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <h2 class="panel-title">💰 Dynamic Budget Allocation</h2>
+            </div>
+
+            <div class="budget-bar-group">
+              <div class="budget-bar-header">
+                <span>🏛️ Venue & Permits (30%)</span>
+                <span id="alloc-venue-val" aria-live="polite">$3,600 (30%)</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 30%; background: var(--violet);"></div></div>
+            </div>
+
+            <div class="budget-bar-group">
+              <div class="budget-bar-header">
+                <span>🍽️ Food & Catering (35%)</span>
+                <span id="alloc-catering-val" aria-live="polite">$4,200 (35%)</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 35%; background: var(--gold);"></div></div>
+            </div>
+
+            <div class="budget-bar-group">
+              <div class="budget-bar-header">
+                <span>🎧 Audio/Visual, DJ & Lighting (15%)</span>
+                <span id="alloc-prod-val" aria-live="polite">$1,800 (15%)</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 15%; background: var(--blue);"></div></div>
+            </div>
+
+            <div class="budget-bar-group">
+              <div class="budget-bar-header">
+                <span>🍸 Beverages & Bar Service (10%)</span>
+                <span id="alloc-bev-val" aria-live="polite">$1,200 (10%)</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 10%; background: var(--emerald);"></div></div>
+            </div>
+
+            <div class="budget-bar-group">
+              <div class="budget-bar-header">
+                <span>🌸 Decor, Photo Ops & Print (5%)</span>
+                <span id="alloc-decor-val" aria-live="polite">$600 (5%)</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 5%; background: var(--rose);"></div></div>
+            </div>
+
+            <div class="budget-bar-group">
+              <div class="budget-bar-header">
+                <span>🛡️ Emergency Contingency Buffer (5%)</span>
+                <span id="alloc-cont-val" aria-live="polite">$600 (5%)</span>
+              </div>
+              <div class="progress-track"><div class="progress-fill" style="width: 5%; background: #64748b;"></div></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h2 class="panel-title">🍷 Beverage Calculation Formula</h2>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              Calculated dynamically based on guest count and hours to prevent mid-party stockouts:
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.9rem;" role="region" aria-label="Beverage quantities breakdown">
               <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-                <span>Venue Space Needed:</span>
-                <strong style="color: var(--gold);">~3,000 sq.ft (Standing/Lounge)</strong>
+                <span>Total Estimated Drink Servings:</span>
+                <strong style="color: var(--gold);" id="bev-total-drinks" aria-live="polite">1,125 drinks</strong>
               </div>
               <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-                <span>Recommended Bartenders:</span>
-                <strong style="color: var(--emerald);">2 Bartenders (1 per 75 guests)</strong>
+                <span>Wine Bottles Needed (Red/White):</span>
+                <strong style="color: var(--rose);" id="bev-wine-bottles" aria-live="polite">90 bottles</strong>
               </div>
               <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-                <span>Catering Service Staff:</span>
-                <strong style="color: var(--blue);">4 Servers + 1 Event Captain</strong>
-              </div>
-              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-                <span>Sound & AV Requirement:</span>
-                <strong style="color: var(--violet);">Dual Wireless Mics + 2kW Subwoofers</strong>
+                <span>Craft Beer Quantity:</span>
+                <strong style="color: var(--blue);" id="bev-beer-cases" aria-live="polite">19 cases (450 cans)</strong>
               </div>
               <div style="display: flex; justify-content: space-between; padding-top: 0.25rem;">
-                <span>Contingency Buffer:</span>
-                <strong style="color: var(--rose);">$600 (Reserved for overruns)</strong>
+                <span>Non-Alcoholic & Mocktails:</span>
+                <strong style="color: var(--emerald);" id="bev-mocktails" aria-live="polite">225 servings</strong>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: Hour-by-Hour Run-of-Show Timeline -->
+      <section id="tab-timeline" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-timeline" tabindex="0">
+        <div class="panel">
+          <div class="panel-header">
+            <h2 class="panel-title">⏱️ Precision Run-of-Show Schedule</h2>
+            <span class="preset-badge">Synchronized Schedule</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            Dynamic milestone pacing designed to maintain high energy, prevent guest fatigue, and keep vendors coordinated.
+          </p>
+
+          <div class="timeline" id="timeline-container" role="feed" aria-label="Event Run-of-Show Timeline">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: Vendor & Invites Suite -->
+      <section id="tab-vendors" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-vendors" tabindex="0">
+        <!-- Interactive Vendor Checklist -->
+        <div class="panel" style="margin-bottom: 1.5rem;">
+          <div class="panel-header">
+            <h2 class="panel-title">📋 Vendor Checklist & Milestone Tracker</h2>
+            <span class="preset-badge" id="checklist-progress-badge" aria-live="polite">0 / 6 Completed</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Keep vendors aligned across key milestones to ensure flawless day-of operations:
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.75rem;" id="vendor-checklist-container">
+            <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" checked aria-label="Venue Contract and 50 percent Deposit Secured" />
+              <span>🏛️ Venue Contract & 50% Deposit Secured</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" checked aria-label="Catering Tasting and Dietary Split Confirmation" />
+              <span>🍽️ Tasting & Dietary Split (~35% Veg/Vegan)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" aria-label="AV DJ Sound Check and Mic Test" />
+              <span>🎧 AV / DJ Sound Check & Mic Test</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" aria-label="Beverage Delivery and Bartender Scheduling" />
+              <span>🍷 Beverage Delivery & Bartender Scheduling</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" aria-label="Photography and Key Moment Shot List" />
+              <span>📸 Photography & Key Moment Shot List</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" aria-label="Rain and Weather Contingency Confirmed" />
+              <span>☔ Rain & Weather Contingency Confirmed</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <label for="vendor-email-draft" class="panel-title" style="margin: 0; cursor: default;">✉️ Caterer & Vendor Negotiation Draft</label>
+              <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.3rem 0.75rem;" onclick="copyText('vendor-email-draft', 'copy-btn-email')" id="copy-btn-email" aria-label="Copy vendor email draft">Copy Email</button>
+            </div>
+            <textarea id="vendor-email-draft" rows="12" style="font-family: monospace; font-size: 0.825rem;" aria-label="Vendor email draft content"></textarea>
           </div>
 
           <div class="panel">
             <div class="panel-header">
-              <h2 class="panel-title">📋 1-Click Operations Export</h2>
+              <label for="rsvp-invite-draft" class="panel-title" style="margin: 0; cursor: default;">💌 RSVP Invitation Copy (WhatsApp / Email)</label>
+              <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.3rem 0.75rem;" onclick="copyText('rsvp-invite-draft', 'copy-btn-rsvp')" id="copy-btn-rsvp" aria-label="Copy RSVP invitation draft">Copy Invite</button>
             </div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
-              Copy the synthesized event manifest, timeline, and vendor allocations directly to clipboard.
-            </p>
-            <button class="btn" style="width: 100%;" onclick="copyText('vendor-email-draft', 'copy-btn-manifest')" id="copy-btn-manifest">
-              📋 Copy Executive Manifest
-            </button>
+            <textarea id="rsvp-invite-draft" rows="12" style="font-family: monospace; font-size: 0.825rem;" aria-label="RSVP invitation draft content"></textarea>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- TAB 2: Budget Breakdown & Drinks Math -->
-    <div id="tab-budget" class="tab-content">
-      <div class="dashboard-grid">
+      <!-- TAB 5: AI Event Copilot Chat -->
+      <section id="tab-copilot" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-copilot" tabindex="0">
         <div class="panel">
           <div class="panel-header">
-            <h2 class="panel-title">💰 Dynamic Budget Allocation</h2>
+            <h2 class="panel-title">🧠 EventPulse AI Copilot</h2>
+            <span class="preset-badge" style="background: rgba(131, 56, 236, 0.2); color: var(--violet);">Context-Aware Assistant</span>
           </div>
-
-          <div class="budget-bar-group">
-            <div class="budget-bar-header">
-              <span>🏛️ Venue & Permits (30%)</span>
-              <span id="alloc-venue-val">$3,600 (30%)</span>
-            </div>
-            <div class="progress-track"><div class="progress-fill" style="width: 30%; background: var(--violet);"></div></div>
-          </div>
-
-          <div class="budget-bar-group">
-            <div class="budget-bar-header">
-              <span>🍽️ Food & Catering (35%)</span>
-              <span id="alloc-catering-val">$4,200 (35%)</span>
-            </div>
-            <div class="progress-track"><div class="progress-fill" style="width: 35%; background: var(--gold);"></div></div>
-          </div>
-
-          <div class="budget-bar-group">
-            <div class="budget-bar-header">
-              <span>🎧 Audio/Visual, DJ & Lighting (15%)</span>
-              <span id="alloc-prod-val">$1,800 (15%)</span>
-            </div>
-            <div class="progress-track"><div class="progress-fill" style="width: 15%; background: var(--blue);"></div></div>
-          </div>
-
-          <div class="budget-bar-group">
-            <div class="budget-bar-header">
-              <span>🍸 Beverages & Bar Service (10%)</span>
-              <span id="alloc-bev-val">$1,200 (10%)</span>
-            </div>
-            <div class="progress-track"><div class="progress-fill" style="width: 10%; background: var(--emerald);"></div></div>
-          </div>
-
-          <div class="budget-bar-group">
-            <div class="budget-bar-header">
-              <span>🌸 Decor, Photo Ops & Print (5%)</span>
-              <span id="alloc-decor-val">$600 (5%)</span>
-            </div>
-            <div class="progress-track"><div class="progress-fill" style="width: 5%; background: var(--rose);"></div></div>
-          </div>
-
-          <div class="budget-bar-group">
-            <div class="budget-bar-header">
-              <span>🛡️ Emergency Contingency Buffer (5%)</span>
-              <span id="alloc-cont-val">$600 (5%)</span>
-            </div>
-            <div class="progress-track"><div class="progress-fill" style="width: 5%; background: #64748b;"></div></div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="panel-header">
-            <h2 class="panel-title">🍷 Beverage Calculation Formula</h2>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-            Calculated dynamically based on guest count and hours to prevent mid-party stockouts:
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Ask real-time contingency questions: rain backups, budget trimming strategies, beverage calculations, or playlist transitions.
           </p>
-          <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.9rem;">
-            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-              <span>Total Estimated Drink Servings:</span>
-              <strong style="color: var(--gold);" id="bev-total-drinks">1,125 drinks</strong>
+
+          <div class="chat-container">
+            <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-label="Event Copilot Chat History">
+              <div class="chat-bubble bot">
+                👋 Hi! I'm your <strong>EventPulse Copilot</strong>. I'm dynamically tracking your celebration parameters. Ask me anything:
+                <br><small style="color: var(--text-muted); margin-top: 0.3rem; display: block;">Try: <em>"What if it rains?"</em> or <em>"How do I cut 15% from catering?"</em> or <em>"Recommend music vibe"</em></small>
+              </div>
             </div>
-            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-              <span>Wine Bottles Needed (Red/White):</span>
-              <strong style="color: var(--rose);" id="bev-wine-bottles">90 bottles</strong>
-            </div>
-            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-              <span>Craft Beer Quantity:</span>
-              <strong style="color: var(--blue);" id="bev-beer-cases">19 cases (450 cans)</strong>
-            </div>
-            <div style="display: flex; justify-content: space-between; padding-top: 0.25rem;">
-              <span>Non-Alcoholic & Mocktails:</span>
-              <strong style="color: var(--emerald);" id="bev-mocktails">225 servings</strong>
+
+            <div class="chat-input-bar">
+              <label for="chat-input" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Type planning question</label>
+              <input type="text" id="chat-input" placeholder="Type a planning question (e.g. 'What if it rains during cocktail hour?')..." aria-label="Ask EventPulse Copilot a question" />
+              <button class="btn" onclick="sendChatMessage()" aria-label="Send question to AI Copilot">Ask Copilot</button>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- TAB 3: Hour-by-Hour Run-of-Show Timeline -->
-    <div id="tab-timeline" class="tab-content">
-      <div class="panel">
-        <div class="panel-header">
-          <h2 class="panel-title">⏱️ Precision Run-of-Show Schedule</h2>
-          <span class="preset-badge">Synchronized Schedule</span>
-        </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-          Dynamic milestone pacing designed to maintain high energy, prevent guest fatigue, and keep vendors coordinated.
-        </p>
-
-        <div class="timeline" id="timeline-container">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 4: Vendor & Invites Suite -->
-    <div id="tab-vendors" class="tab-content">
-      <!-- Interactive Vendor Checklist -->
-      <div class="panel" style="margin-bottom: 1.5rem;">
-        <div class="panel-header">
-          <h2 class="panel-title">📋 Vendor Checklist & Milestone Tracker</h2>
-          <span class="preset-badge" id="checklist-progress-badge">0 / 6 Completed</span>
-        </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
-          Keep vendors aligned across key milestones to ensure flawless day-of operations:
-        </p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.75rem;" id="vendor-checklist-container">
-          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" checked />
-            <span>🏛️ Venue Contract & 50% Deposit Secured</span>
-          </label>
-          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" checked />
-            <span>🍽️ Tasting & Dietary Split (~35% Veg/Vegan)</span>
-          </label>
-          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" />
-            <span>🎧 AV / DJ Sound Check & Mic Test</span>
-          </label>
-          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" />
-            <span>🍷 Beverage Delivery & Bartender Scheduling</span>
-          </label>
-          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" />
-            <span>📸 Photography & Key Moment Shot List</span>
-          </label>
-          <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; text-transform: none; color: var(--text-main); font-size: 0.875rem; background: rgba(10, 12, 22, 0.6); padding: 0.6rem 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <input type="checkbox" onchange="updateChecklistProgress()" style="width: auto; accent-color: var(--emerald);" />
-            <span>☔ Rain & Weather Contingency Confirmed</span>
-          </label>
-        </div>
-      </div>
-
-      <div class="dashboard-grid">
-        <div class="panel">
-          <div class="panel-header">
-            <h2 class="panel-title">✉️ Caterer & Vendor Negotiation Draft</h2>
-            <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.3rem 0.75rem;" onclick="copyText('vendor-email-draft', 'copy-btn-email')" id="copy-btn-email">Copy Email</button>
-          </div>
-          <textarea id="vendor-email-draft" rows="12" style="font-family: monospace; font-size: 0.825rem;"></textarea>
-        </div>
-
-        <div class="panel">
-          <div class="panel-header">
-            <h2 class="panel-title">💌 RSVP Invitation Copy (WhatsApp / Email)</h2>
-            <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.3rem 0.75rem;" onclick="copyText('rsvp-invite-draft', 'copy-btn-rsvp')" id="copy-btn-rsvp">Copy Invite</button>
-          </div>
-          <textarea id="rsvp-invite-draft" rows="12" style="font-family: monospace; font-size: 0.825rem;"></textarea>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 5: AI Event Copilot Chat -->
-    <div id="tab-copilot" class="tab-content">
-      <div class="panel">
-        <div class="panel-header">
-          <h2 class="panel-title">🧠 EventPulse AI Copilot</h2>
-          <span class="preset-badge" style="background: rgba(131, 56, 236, 0.2); color: var(--violet);">Context-Aware Assistant</span>
-        </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
-          Ask real-time contingency questions: rain backups, budget trimming strategies, beverage calculations, or playlist transitions.
-        </p>
-
-        <div class="chat-container">
-          <div class="chat-messages" id="chat-messages">
-            <div class="chat-bubble bot">
-              👋 Hi! I'm your <strong>EventPulse Copilot</strong>. I'm dynamically tracking your celebration parameters. Ask me anything:
-              <br><small style="color: var(--text-muted); margin-top: 0.3rem; display: block;">Try: <em>"What if it rains?"</em> or <em>"How do I cut 15% from catering?"</em> or <em>"Recommend music vibe"</em></small>
-            </div>
-          </div>
-
-          <div class="chat-input-bar">
-            <input type="text" id="chat-input" placeholder="Type a planning question (e.g. 'What if it rains during cocktail hour?')..." />
-            <button class="btn" onclick="sendChatMessage()">Ask Copilot</button>
-          </div>
-        </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
       <p>EventPulse AI • Built for Hack2skill PromptWars Virtual: Challenge 5 (Celebration & Event Planner)</p>
       <p style="margin-top: 0.35rem; font-size: 0.75rem; color: var(--text-muted);">
         Powered by Google Antigravity & Modern Web AI Architecture. Single branch, lightweight (&lt; 2 MB).
